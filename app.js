@@ -1,13 +1,17 @@
-function* gen(val) {
-    let greet = yield ('hello number ' + val);
 
-    yield ('hello number ' + greet);
+
+function* gen(val) {
+    let greet10 = yield ('hello number* ' + val);
+    let greet11 = yield ('hello number* ' + ~(val +1)*-1)
+
+    yield ('hello number ' + greet10);
 }
 
 let test = gen(10);
 
 console.log(test.next().value);
 console.log(test.next(11).value);
+console.log(test.next(1).value);
 // console.log(test.next(11).value);
 // const removeElement = function(nums, val) {
 //     let j = 0;
