@@ -1,16 +1,25 @@
-const removeElement = function(nums, val) {
-    let j = 0;
+function* gen(val) {
+    let greet = yield ('hello number ' + val);
 
-    for (let i = 0, len = nums.length; i < len; i++) {
-        if (nums[i] !== val) {
-            nums[j] = nums[i];
-            j++;
-        }        
-    }
-    return j;
-};
+    yield ('hello number ' + greet);
+}
 
-console.log(removeElement([1,4,2,4,3,1], 4));
+let test = gen(10);
+
+console.log(test.next().value);
+console.log(test.next(11).value);
+// console.log(test.next(11).value);
+// const removeElement = function(nums, val) {
+//     let j = 0;
+
+//     for (let i = 0, len = nums.length; i < len; i++) {
+//         if (nums[i] !== val) {
+//             nums[j] = nums[i];
+//             j++;
+//         }        
+//     }
+//     return j;
+// };
 
 
 //*************** REMOVE DUPLICATE IN A SORTED ARRAY***********//
