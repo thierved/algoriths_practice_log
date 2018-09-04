@@ -1,18 +1,7 @@
+                    /**** PROBLEM 2 ****/
 
+ //*************** REMOVE GIVEN ELEMENT IN A SORTED ARRAY***********//
 
-function* gen(val) {
-    let greet10 = yield ('hello number* ' + val);
-    let greet11 = yield ('hello number* ' + ~(val +1)*-1)
-
-    yield ('hello number ' + greet10);
-}
-
-let test = gen(10);
-
-console.log(test.next().value);
-console.log(test.next(11).value);
-console.log(test.next(1).value);
-// console.log(test.next(11).value);
 // const removeElement = function(nums, val) {
 //     let j = 0;
 
@@ -25,6 +14,7 @@ console.log(test.next(1).value);
 //     return j;
 // };
 
+                    /**** PROBLEM 1 ****/
 
 //*************** REMOVE DUPLICATE IN A SORTED ARRAY***********//
 
