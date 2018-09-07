@@ -1,28 +1,27 @@
     /**** PROBLEM 3 ****/
 
-    const findElement = (list, el) => {
-
-        if (list.length < 1) {
+    const searchInsert = function(nums, target) {
+        if (nums.length < 1) {
             return -1;
         }
 
         let low = 0;
-        let hight = list.length - 1;
+        let hight = nums.length - 1;
 
-        if (list[low] === el) {
+        if (nums[low] === target) {
             return low;
         }
 
-        if (list[hight] === el) {
+        if (nums[hight] === target) {
             return hight;
         }
 
         while (low < hight - 1) {
             let mid = low + parseInt((hight - low) / 2);
 
-            if (list[mid] === el) {
+            if (nums[mid] === target) {
                 return mid;
-            } else if (list[mid] < el) {
+            } else if (nums[mid] < target) {
                 low = mid;
             } else {
                 hight = mid;
@@ -30,7 +29,8 @@
         }
 
         return -1;
-    }
+    };
+
 
     console.log(findElement([1, 2, 3, 5, 10, 11, 15], 20));
     
