@@ -1,38 +1,13 @@
     /**** PROBLEM 3 ****/
 
     const searchInsert = function(nums, target) {
-        if (nums.length < 1) {
-            return -1;
-        }
-
-        let low = 0;
-        let hight = nums.length - 1;
-
-        if (nums[low] === target) {
-            return low;
-        }
-
-        if (nums[hight] === target) {
-            return hight;
-        }
-
-        while (low < hight - 1) {
-            let mid = low + parseInt((hight - low) / 2);
-
-            if (nums[mid] === target) {
-                return mid;
-            } else if (nums[mid] < target) {
-                low = mid;
-            } else {
-                hight = mid;
-            }
-        }
-
-        return -1;
+        return (nums.concat([target])).sort((a,b) => {
+            return a - b;
+        }).indexOf(target);        
     };
 
 
-    console.log(findElement([1, 2, 3, 5, 10, 11, 15], 20));
+    console.log(searchInsert([1, 2, 3, 5, 10, 11, 15], 16));
     
 
     /**** PROBLEM 2 ****/
